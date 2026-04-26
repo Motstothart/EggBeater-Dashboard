@@ -1,0 +1,142 @@
+{
+  "athletes": [
+    {
+      "id": "sam-tabib",
+      "name": "Sam Tabib",
+      "track": "10th-roadmap",
+      "classOf": 2028,
+      "parents": [{"name": "Shelly"}],
+      "mentorName": null,
+      "mentorEmail": null,
+      "athleteEmail": null,
+      "parentEmails": [],
+      "driveFolderUrl": null,
+      "deliverables": [
+        {"id": "sam-d1", "label": "Initial college list (20-25 programs)", "due": "2026-03-29", "status": "pending"},
+        {"id": "sam-d2", "label": "Recruiting Guide", "due": "2026-04-12", "status": "pending"},
+        {"id": "sam-d3", "label": "Refined list (12-15 programs) with detailed research", "due": "2026-04-18", "status": "pending"},
+        {"id": "sam-d4", "label": "First drafts of personalized outreach emails (template first)", "due": "2026-05-10", "status": "pending"},
+        {"id": "sam-d5", "label": "10-12 finalized outreach emails (1-2 rounds editing)", "due": "2026-05-30", "status": "pending"},
+        {"id": "sam-d6", "label": "Practice phone conversations with mentor", "due": "2026-06-14", "status": "pending"},
+        {"id": "sam-d7", "label": "All outreach emails sent (June 1-15 window)", "due": "2026-06-15", "status": "pending"},
+        {"id": "sam-d8", "label": "Follow-up cycle starts (every 2-3 weeks)", "due": "2026-06-29", "status": "pending"}
+      ]
+    },
+    {
+      "id": "leila",
+      "name": "Leila",
+      "track": "10th-roadmap",
+      "classOf": 2028,
+      "parents": [{"name": "Polly"}],
+      "mentorName": null,
+      "mentorEmail": null,
+      "athleteEmail": null,
+      "parentEmails": [],
+      "driveFolderUrl": null,
+      "deliverables": [
+        {"id": "leila-d1", "label": "Initial college list (20-25 programs)", "due": "2026-03-29", "status": "pending"},
+        {"id": "leila-d2", "label": "Recruiting Guide", "due": "2026-04-12", "status": "pending"},
+        {"id": "leila-d3", "label": "Refined list (12-15 programs) with detailed research", "due": "2026-04-18", "status": "pending"},
+        {"id": "leila-d4", "label": "First drafts of personalized outreach emails (template first)", "due": "2026-05-10", "status": "pending"},
+        {"id": "leila-d5", "label": "10-12 finalized outreach emails (1-2 rounds editing)", "due": "2026-05-30", "status": "pending"},
+        {"id": "leila-d6", "label": "Practice phone conversations with mentor", "due": "2026-06-14", "status": "pending"},
+        {"id": "leila-d7", "label": "All outreach emails sent (June 1-15 window)", "due": "2026-06-15", "status": "pending"},
+        {"id": "leila-d8", "label": "Follow-up cycle starts (every 2-3 weeks)", "due": "2026-06-29", "status": "pending"}
+      ]
+    },
+    {
+      "id": "soren",
+      "name": "Soren",
+      "track": "10th-roadmap",
+      "classOf": 2028,
+      "parents": [{"name": "Amy"}],
+      "mentorName": "Ilias",
+      "mentorEmail": null,
+      "athleteEmail": null,
+      "parentEmails": [],
+      "driveFolderUrl": null,
+      "deliverables": [
+        {"id": "soren-d1", "label": "Initial college list (12-15 programs)", "due": "2026-05-03", "status": "pending"},
+        {"id": "soren-d2", "label": "Recruiting Reference document", "due": "2026-05-03", "status": "pending"},
+        {"id": "soren-d3", "label": "Template outreach email", "due": "2026-05-03", "status": "pending"},
+        {"id": "soren-d4", "label": "Refined list (12-15 programs) with detailed research", "due": "2026-05-15", "status": "pending"},
+        {"id": "soren-d5", "label": "8-10 finalized outreach emails (1-2 rounds editing)", "due": "2026-05-30", "status": "pending"},
+        {"id": "soren-d6", "label": "All outreach emails sent (June 1-15 window)", "due": "2026-06-15", "status": "pending"},
+        {"id": "soren-d7", "label": "Follow-up cycle starts (every 2 weeks)", "due": "2026-06-29", "status": "pending"}
+      ]
+    },
+    {
+      "id": "lucas",
+      "name": "Lucas",
+      "track": "9th",
+      "classOf": null,
+      "parents": [{"name": "Anna"}],
+      "mentorName": null,
+      "mentorEmail": null,
+      "athleteEmail": null,
+      "parentEmails": [],
+      "driveFolderUrl": null,
+      "deliverables": []
+    },
+    {
+      "id": "donny",
+      "name": "Donny",
+      "track": "9th",
+      "classOf": null,
+      "parents": [{"name": "Jennifer"}],
+      "mentorName": null,
+      "mentorEmail": null,
+      "athleteEmail": null,
+      "parentEmails": [],
+      "driveFolderUrl": null,
+      "deliverables": []
+    },
+    {
+      "id": "preston",
+      "name": "Preston",
+      "track": "9th",
+      "classOf": null,
+      "parents": [{"name": "Ann"}],
+      "mentorName": null,
+      "mentorEmail": null,
+      "athleteEmail": null,
+      "parentEmails": [],
+      "driveFolderUrl": null,
+      "deliverables": []
+    },
+    {
+      "id": "will",
+      "name": "Will",
+      "track": "9th",
+      "classOf": null,
+      "parents": [{"name": "Todd"}, {"name": "Lauren"}],
+      "mentorName": null,
+      "mentorEmail": null,
+      "athleteEmail": null,
+      "parentEmails": [],
+      "driveFolderUrl": null,
+      "deliverables": []
+    }
+  ],
+  "tracks": [
+    {
+      "id": "9th",
+      "label": "9th Graders",
+      "description": "Light touch: meeting cadence and schedule support."
+    },
+    {
+      "id": "10th-roadmap",
+      "label": "10th - Full Roadmap",
+      "description": "Committed to the recruiting roadmap. Tracks deliverables and Drive progress."
+    },
+    {
+      "id": "11th-retainer",
+      "label": "11th / Retainer / Partial",
+      "description": "On retainer or partially committed. Free-form action tracking."
+    }
+  ],
+  "rules": {
+    "meetingOverdueWeeks": 3,
+    "deliverableWarnDays": 14
+  }
+}
