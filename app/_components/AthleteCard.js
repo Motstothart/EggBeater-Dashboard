@@ -1,0 +1,280 @@
+"use client";
+
+import { useState, useTransition, useRef, useEffect } from "react";
+import { addNote, toggleNote, deleteNote, toggleDeliverable, removeAthlete } from "@/lib/actions";
+import { templates } from "@/lib/templates";
+
+function formatDate(d) {
+  if (!d) return null;
+  const date = d instanceof Date ? d : new Date(d);
+  return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+}
+
+function MeetingPill({ athlete }) {
+  if (athlete.meetingStatus === "no-data") return <span className="pill no-data">no calendar data</span>;
+  if (athlete.meetingStatus === "overdue") return <span className="pill overdue">overdue: {athlete.weeksSinceLast}w since last</span>;
+  if (athlete.meetingStatus === "warn") return <span className="pill warn">{athlete.weeksSinceLast}w since last</span>;
+  return <span className="pill ok">last {athlete.weeksSinceLast}w ago</span>;
+}
+
+function NextMeetingPill({ athlete }) {
+  if (!athlete.nextMeeting) return null;
+  return <span className="pill">next {formatDate(athlete.nextMeeting)}</span>;
+}
+
+function DeliverableRow({ athleteId, d }) {
+  const [pending, startTransition] = useTransition();
+  const cls = d.status === "done" ? "done" : d.alert;
+  const due = formatDate(d.due);
+  let suffix = "";
+  if (d.status !== "done") {
+    if (d.daysUntil < 0) suffix = `${Math.abs(d.daysUntil)}d overdue`;
+    else suffix = `in ${d.daysUntil}d`;
+  } else {
+    suffix = "done";
+  }
+  const onToggle = () => {
+    startTransition(async () => {
+      try {
+        await toggleDeliverable(athleteId, d.id);
+      } catch (e) {
+        alert(`Failed: ${e.message}`);
+      }
+    });
+  };
+  return (
+    <label className={`deliverable ${cls} ${pending ? "pending" : ""}`}>
+      <input type="checkbox" checked={d.status === "done"} onChange={onToggle} disabled={pending} />
+      <span className="deliverable-label">{d.label}</span>
+      <span className="deliverable-due">
+        {due} - {suffix}
+      </span>
+    </label>
+  );
+}
+
+function NotesPopover({ athlete, onClose }) {
+  const [text, setText] = useState("");
+  const [pending, startTransition] = useTransition();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    function onClick(e) {
+      if (ref.current && !ref.current.contains(e.target)) onClose();
+    }
+    function onKey(e) {
+      if (e.key === "Escape") onClose();
+    }
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+
+  const submit = (e) => {
+    e.preventDefault();
+    if (!text.trim()) return;
+    const value = text;
+    setText("");
+    startTransition(async () => {
+      try {
+        await addNote(athlete.id, value);
+      } catch (err) {
+        alert(`Failed: ${err.message}`);
+      }
+    });
+  };
+
+  const open = athlete.notes.filter((n) => !n.done);
+  const done = athlete.notes.filter((n) => n.done);
+
+  return (
+    <div className="popover" ref={ref} onClick={(e) => e.stopPropagation()}>
+      <div className="popover-header">
+        <strong>{athlete.name} - notes</strong>
+        <button className="icon-btn" onClick={onClose} aria-label="Close">x</button>
+      </div>
+      <form onSubmit={submit} className="note-form">
+        <input
+          type="text"
+          placeholder="Add a note (Enter to save)..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          disabled={pending}
+          autoFocus
+        />
+      </form>
+      {open.length === 0 && done.length === 0 && (
+        <div className="popover-empty">No notes yet.</div>
+      )}
+      {open.length > 0 && (
+        <ul className="note-list">
+          {open.map((n) => (
+            <NoteItem key={n.id} athleteId={athlete.id} note={n} />
+          ))}
+        </ul>
+      )}
+      {done.length > 0 && (
+        <details className="note-done-section">
+          <summary>{done.length} completed</summary>
+          <ul className="note-list">
+            {done.map((n) => (
+              <NoteItem key={n.id} athleteId={athlete.id} note={n} />
+            ))}
+          </ul>
+        </details>
+      )}
+    </div>
+  );
+}
+
+function NoteItem({ athleteId, note }) {
+  const [pending, startTransition] = useTransition();
+  const onToggle = () => {
+    startTransition(async () => {
+      try {
+        await toggleNote(athleteId, note.id);
+      } catch (e) {
+        alert(`Failed: ${e.message}`);
+      }
+    });
+  };
+  const onDelete = () => {
+    if (!confirm("Delete this note?")) return;
+    startTransition(async () => {
+      try {
+        await deleteNote(athleteId, note.id);
+      } catch (e) {
+        alert(`Failed: ${e.message}`);
+      }
+    });
+  };
+  return (
+    <li className={`note ${note.done ? "done" : ""} ${pending ? "pending" : ""}`}>
+      <input type="checkbox" checked={note.done} onChange={onToggle} disabled={pending} />
+      <span className="note-text">{note.text}</span>
+      <button className="icon-btn note-delete" onClick={onDelete} disabled={pending} title="Delete">x</button>
+    </li>
+  );
+}
+
+function MessageModal({ athlete, onClose }) {
+  const [activeId, setActiveId] = useState("schedule");
+  const [copied, setCopied] = useState(false);
+  const list = templates(athlete);
+  const active = list.find((t) => t.id === activeId) || list[0];
+  const ref = useRef(null);
+  const taRef = useRef(null);
+
+  useEffect(() => {
+    function onClick(e) {
+      if (ref.current && !ref.current.contains(e.target)) onClose();
+    }
+    function onKey(e) {
+      if (e.key === "Escape") onClose();
+    }
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+
+  const copy = async () => {
+    const text = taRef.current?.value ?? active.body;
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      taRef.current?.select();
+    }
+  };
+
+  return (
+    <div className="modal-backdrop">
+      <div className="modal" ref={ref}>
+        <div className="modal-header">
+          <strong>Message templates - {athlete.name}</strong>
+          <button className="icon-btn" onClick={onClose}>x</button>
+        </div>
+        <div className="template-tabs">
+          {list.map((t) => (
+            <button
+              key={t.id}
+              className={`tab ${t.id === active.id ? "active" : ""}`}
+              onClick={() => setActiveId(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <textarea ref={taRef} className="template-body" defaultValue={active.body} key={active.id} rows={6} />
+        <div className="modal-actions">
+          <button className="btn primary" onClick={copy}>{copied ? "Copied" : "Copy"}</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function AthleteCard({ athlete }) {
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const [messagesOpen, setMessagesOpen] = useState(false);
+  const [pending, startTransition] = useTransition();
+
+  const parents = athlete.parents.map((p) => p.name).join(" and ");
+  const openCount = athlete.notes.filter((n) => !n.done).length;
+
+  const onRemove = () => {
+    if (!confirm(`Remove ${athlete.name}? Their notes will also be cleared.`)) return;
+    startTransition(async () => {
+      try {
+        await removeAthlete(athlete.id);
+      } catch (e) {
+        alert(`Failed: ${e.message}`);
+      }
+    });
+  };
+
+  return (
+    <div className={`athlete-card ${athlete.cardAlert} ${pending ? "pending" : ""}`}>
+      <div className="card-head">
+        <div>
+          <button
+            className="athlete-name name-button"
+            onClick={() => setPopoverOpen((v) => !v)}
+            title="Open notes"
+          >
+            {athlete.name}
+            {openCount > 0 && <span className="note-badge">{openCount}</span>}
+          </button>
+          <div className="athlete-meta">
+            {parents ? `Parent: ${parents}` : null}
+            {athlete.mentorName ? ` - Mentor: ${athlete.mentorName}` : null}
+          </div>
+        </div>
+        <div className="card-actions">
+          <button className="icon-btn" onClick={() => setMessagesOpen(true)} title="Message templates">msg</button>
+          <button className="icon-btn" onClick={onRemove} title="Remove athlete" disabled={pending}>x</button>
+        </div>
+      </div>
+      <div className="status-row">
+        <MeetingPill athlete={athlete} />
+        <NextMeetingPill athlete={athlete} />
+      </div>
+      {athlete.deliverables.length > 0 && (
+        <div className="deliverables">
+          {athlete.deliverables.map((d) => (
+            <DeliverableRow key={d.id} athleteId={athlete.id} d={d} />
+          ))}
+        </div>
+      )}
+      {popoverOpen && <NotesPopover athlete={athlete} onClose={() => setPopoverOpen(false)} />}
+      {messagesOpen && <MessageModal athlete={athlete} onClose={() => setMessagesOpen(false)} />}
+    </div>
+  );
+}
