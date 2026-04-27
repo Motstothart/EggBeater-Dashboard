@@ -6,9 +6,9 @@
       {
         "id": "note-mognag0d-n6zwo7",
         "text": "Test note",
-        "done": false,
+        "done": true,
         "createdAt": "2026-04-27T03:36:03.469Z",
-        "doneAt": null
+        "doneAt": "2026-04-27T03:36:08.697Z"
       }
     ]
   }
