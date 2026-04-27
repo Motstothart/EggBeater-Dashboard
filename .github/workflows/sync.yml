@@ -1,0 +1,31 @@
+name: Sync calendar
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: calendar-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger sync endpoint
+        env:
+          SYNC_URL: ${{ secrets.SYNC_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          if [ -z "$SYNC_URL" ]; then
+            echo "SYNC_URL secret is not set" >&2
+            exit 1
+          fi
+          if [ -n "$CRON_SECRET" ]; then
+            curl -fsSL --max-time 60 -H "Authorization: Bearer $CRON_SECRET" "$SYNC_URL"
+          else
+            curl -fsSL --max-time 60 "$SYNC_URL"
+          fi
+          echo

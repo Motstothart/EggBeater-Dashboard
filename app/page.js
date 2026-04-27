@@ -1,9 +1,11 @@
 import { deriveAll } from "@/lib/derive";
 import { isWriteEnabled } from "@/lib/github";
+import { isGoogleConfigured } from "@/lib/google";
 import AthleteCard from "./_components/AthleteCard";
 import AthleteForm from "./_components/AthleteForm";
 import PunchList from "./_components/PunchList";
 import SetupBanner from "./_components/SetupBanner";
+import SyncButton from "./_components/SyncButton";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +26,7 @@ function Track({ track }) {
 export default async function Page() {
   const { tracks, rosterTracks, lastSyncAt, punchList } = await deriveAll();
   const writeEnabled = isWriteEnabled();
+  const googleEnabled = isGoogleConfigured();
   const today = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
@@ -40,7 +43,10 @@ export default async function Page() {
             {lastSyncAt ? ` - last sync ${new Date(lastSyncAt).toLocaleString()}` : " - no sync yet"}
           </div>
         </div>
-        {writeEnabled && <AthleteForm tracks={rosterTracks} />}
+        <div className="page-head-actions">
+          <SyncButton enabled={googleEnabled && writeEnabled} />
+          {writeEnabled && <AthleteForm tracks={rosterTracks} />}
+        </div>
       </div>
 
       {!writeEnabled && <SetupBanner />}

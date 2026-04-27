@@ -491,6 +491,24 @@ h1 {
   flex-shrink: 0;
 }
 
+.page-head-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sync-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sync-msg {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .template-tabs {
   display: flex;
   gap: 4px;
