@@ -31,7 +31,8 @@
           "id": "sam-d2",
           "label": "Recruiting Guide",
           "due": "2026-04-12",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-04-28T05:20:24.963Z"
         },
         {
           "id": "sam-d3",
