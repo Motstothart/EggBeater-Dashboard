@@ -146,6 +146,12 @@
           "label": "Follow-up cycle starts (every 2-3 weeks)",
           "due": "2026-06-29",
           "status": "pending"
+        },
+        {
+          "id": "d-moiudk9c-v8ppvs",
+          "label": "Set up meetings with girls at Princeton/Brown (Erin's friends?)",
+          "due": "2026-05-03",
+          "status": "pending"
         }
       ]
     },
