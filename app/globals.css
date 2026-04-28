@@ -572,3 +572,126 @@ h1 {
 .req {
   color: var(--overdue);
 }
+
+.summary-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-bottom: 18px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.summary-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.summary-label {
+  color: var(--muted);
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.stat-pill {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.stat-pill strong {
+  color: var(--text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-pill.ok { border-color: var(--ok); color: var(--ok); }
+.stat-pill.ok strong { color: var(--ok); }
+.stat-pill.warn { border-color: var(--warn); color: var(--warn); }
+.stat-pill.warn strong { color: var(--warn); }
+.stat-pill.overdue { border-color: var(--overdue); color: var(--overdue); }
+.stat-pill.overdue strong { color: var(--overdue); }
+.stat-pill.no-data { border-color: var(--no-data); color: var(--no-data); }
+.stat-pill.no-data strong { color: var(--no-data); }
+
+.deliverable {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+}
+
+.deliverable-delete {
+  font-size: 10px;
+  padding: 1px 5px;
+  margin-left: 4px;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.deliverable:hover .deliverable-delete {
+  opacity: 1;
+}
+
+.add-deliverable-btn {
+  margin-top: 8px;
+  background: transparent;
+  border: 1px dashed var(--border-strong);
+  color: var(--muted);
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  width: 100%;
+  font-family: inherit;
+}
+
+.add-deliverable-btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.add-deliverable-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+}
+
+.add-deliverable-form input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.add-deliverable-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.pill-btn {
+  font-size: 10px;
+  padding: 2px 7px;
+}
+
+.muted {
+  color: var(--muted);
+}

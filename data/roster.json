@@ -15,8 +15,7 @@
       "athleteEmail": null,
       "parentEmails": [],
       "calendarKeywords": [
-        "Sam",
-        "Tabib"
+        "Sam T"
       ],
       "driveFolderUrl": null,
       "deliverables": [
@@ -307,7 +306,8 @@
     }
   ],
   "rules": {
-    "meetingOverdueWeeks": 3,
+    "meetingWarnWeeks": 3,
+    "meetingOverdueWeeks": 5,
     "deliverableWarnDays": 14
   }
 }

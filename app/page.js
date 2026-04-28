@@ -5,6 +5,7 @@ import AthleteCard from "./_components/AthleteCard";
 import AthleteForm from "./_components/AthleteForm";
 import PunchList from "./_components/PunchList";
 import SetupBanner from "./_components/SetupBanner";
+import SummaryStats from "./_components/SummaryStats";
 import SyncButton from "./_components/SyncButton";
 
 export const dynamic = "force-dynamic";
@@ -24,7 +25,7 @@ function Track({ track }) {
 }
 
 export default async function Page() {
-  const { tracks, rosterTracks, lastSyncAt, punchList } = await deriveAll();
+  const { tracks, rosterTracks, lastSyncAt, punchList, summary } = await deriveAll();
   const writeEnabled = isWriteEnabled();
   const googleEnabled = isGoogleConfigured();
   const today = new Date().toLocaleDateString("en-US", {
@@ -51,6 +52,8 @@ export default async function Page() {
 
       {!writeEnabled && <SetupBanner />}
 
+      <SummaryStats summary={summary} />
+
       <PunchList items={punchList} />
 
       <section className="tracks">
@@ -59,7 +62,7 @@ export default async function Page() {
         ))}
       </section>
 
-      <div className="footer">Phase 1 - click name for notes, tick deliverables, click "msg" for templates.</div>
+      <div className="footer">"met" marks today's meeting - "kw" edits keywords - "msg" gets templates - click name for notes.</div>
     </main>
   );
 }

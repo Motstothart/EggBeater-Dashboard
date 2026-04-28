@@ -1,7 +1,18 @@
 "use client";
 
 import { useState, useTransition, useRef, useEffect } from "react";
-import { addNote, toggleNote, deleteNote, toggleDeliverable, removeAthlete, updateAthleteKeywords } from "@/lib/actions";
+import {
+  addNote,
+  toggleNote,
+  deleteNote,
+  toggleDeliverable,
+  removeAthlete,
+  updateAthleteKeywords,
+  addDeliverable,
+  removeDeliverable,
+  recordManualMeeting,
+  clearManualMeeting,
+} from "@/lib/actions";
 import { templates } from "@/lib/templates";
 
 function formatDate(d) {
@@ -11,10 +22,11 @@ function formatDate(d) {
 }
 
 function MeetingPill({ athlete }) {
-  if (athlete.meetingStatus === "no-data") return <span className="pill no-data">no calendar data</span>;
-  if (athlete.meetingStatus === "overdue") return <span className="pill overdue">overdue: {athlete.weeksSinceLast}w since last</span>;
-  if (athlete.meetingStatus === "warn") return <span className="pill warn">{athlete.weeksSinceLast}w since last</span>;
-  return <span className="pill ok">last {athlete.weeksSinceLast}w ago</span>;
+  const suffix = athlete.lastMeetingSource === "manual" ? " (manual)" : "";
+  if (athlete.meetingStatus === "no-data") return <span className="pill no-data">no meeting recorded</span>;
+  if (athlete.meetingStatus === "overdue") return <span className="pill overdue">overdue: {athlete.weeksSinceLast}w since last{suffix}</span>;
+  if (athlete.meetingStatus === "warn") return <span className="pill warn">{athlete.weeksSinceLast}w since last{suffix}</span>;
+  return <span className="pill ok">last {athlete.weeksSinceLast}w ago{suffix}</span>;
 }
 
 function NextMeetingPill({ athlete }) {
@@ -42,14 +54,90 @@ function DeliverableRow({ athleteId, d }) {
       }
     });
   };
+  const onDelete = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!confirm(`Delete deliverable "${d.label}"?`)) return;
+    startTransition(async () => {
+      try {
+        await removeDeliverable(athleteId, d.id);
+      } catch (e) {
+        alert(`Failed: ${e.message}`);
+      }
+    });
+  };
   return (
-    <label className={`deliverable ${cls} ${pending ? "pending" : ""}`}>
-      <input type="checkbox" checked={d.status === "done"} onChange={onToggle} disabled={pending} />
+    <div className={`deliverable ${cls} ${pending ? "pending" : ""}`}>
+      <input
+        type="checkbox"
+        checked={d.status === "done"}
+        onChange={onToggle}
+        disabled={pending}
+      />
       <span className="deliverable-label">{d.label}</span>
       <span className="deliverable-due">
         {due} - {suffix}
       </span>
-    </label>
+      <button
+        type="button"
+        className="icon-btn deliverable-delete"
+        onClick={onDelete}
+        disabled={pending}
+        title="Delete deliverable"
+      >
+        x
+      </button>
+    </div>
+  );
+}
+
+function AddDeliverableForm({ athleteId, onClose }) {
+  const [label, setLabel] = useState("");
+  const [due, setDue] = useState("");
+  const [pending, startTransition] = useTransition();
+
+  const submit = (e) => {
+    e.preventDefault();
+    if (!label.trim() || !due) return;
+    startTransition(async () => {
+      try {
+        const result = await addDeliverable(athleteId, label, due);
+        if (!result.ok) {
+          alert(result.error);
+          return;
+        }
+        setLabel("");
+        setDue("");
+        onClose();
+      } catch (err) {
+        alert(`Failed: ${err.message}`);
+      }
+    });
+  };
+
+  return (
+    <form className="add-deliverable-form" onSubmit={submit}>
+      <input
+        type="text"
+        placeholder="Deliverable description"
+        value={label}
+        onChange={(e) => setLabel(e.target.value)}
+        autoFocus
+        required
+      />
+      <input
+        type="date"
+        value={due}
+        onChange={(e) => setDue(e.target.value)}
+        required
+      />
+      <div className="add-deliverable-actions">
+        <button type="button" className="icon-btn" onClick={onClose} disabled={pending}>cancel</button>
+        <button type="submit" className="icon-btn" disabled={pending || !label.trim() || !due}>
+          {pending ? "..." : "add"}
+        </button>
+      </div>
+    </form>
   );
 }
 
@@ -285,16 +373,39 @@ export default function AthleteCard({ athlete }) {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [messagesOpen, setMessagesOpen] = useState(false);
   const [keywordsOpen, setKeywordsOpen] = useState(false);
+  const [addDeliverableOpen, setAddDeliverableOpen] = useState(false);
   const [pending, startTransition] = useTransition();
 
   const parents = athlete.parents.map((p) => p.name).join(" and ");
   const openCount = athlete.notes.filter((n) => !n.done).length;
+  const isManual = athlete.lastMeetingSource === "manual";
 
   const onRemove = () => {
     if (!confirm(`Remove ${athlete.name}? Their notes will also be cleared.`)) return;
     startTransition(async () => {
       try {
         await removeAthlete(athlete.id);
+      } catch (e) {
+        alert(`Failed: ${e.message}`);
+      }
+    });
+  };
+
+  const onMarkMeeting = () => {
+    startTransition(async () => {
+      try {
+        await recordManualMeeting(athlete.id, new Date().toISOString());
+      } catch (e) {
+        alert(`Failed: ${e.message}`);
+      }
+    });
+  };
+
+  const onClearManual = () => {
+    if (!confirm("Clear manual meeting record? Will fall back to calendar data.")) return;
+    startTransition(async () => {
+      try {
+        await clearManualMeeting(athlete.id);
       } catch (e) {
         alert(`Failed: ${e.message}`);
       }
@@ -319,6 +430,7 @@ export default function AthleteCard({ athlete }) {
           </div>
         </div>
         <div className="card-actions">
+          <button className="icon-btn" onClick={onMarkMeeting} title="Mark meeting today" disabled={pending}>met</button>
           <button className="icon-btn" onClick={() => setKeywordsOpen(true)} title="Edit calendar keywords">kw</button>
           <button className="icon-btn" onClick={() => setMessagesOpen(true)} title="Message templates">msg</button>
           <button className="icon-btn" onClick={onRemove} title="Remove athlete" disabled={pending}>x</button>
@@ -327,14 +439,37 @@ export default function AthleteCard({ athlete }) {
       <div className="status-row">
         <MeetingPill athlete={athlete} />
         <NextMeetingPill athlete={athlete} />
+        {isManual && (
+          <button
+            className="icon-btn pill-btn"
+            onClick={onClearManual}
+            disabled={pending}
+            title="Clear manual record"
+          >
+            clear
+          </button>
+        )}
       </div>
-      {athlete.deliverables.length > 0 && (
-        <div className="deliverables">
-          {athlete.deliverables.map((d) => (
+      <div className="deliverables">
+        {athlete.deliverables.length > 0 &&
+          athlete.deliverables.map((d) => (
             <DeliverableRow key={d.id} athleteId={athlete.id} d={d} />
           ))}
-        </div>
-      )}
+        {addDeliverableOpen ? (
+          <AddDeliverableForm
+            athleteId={athlete.id}
+            onClose={() => setAddDeliverableOpen(false)}
+          />
+        ) : (
+          <button
+            type="button"
+            className="add-deliverable-btn"
+            onClick={() => setAddDeliverableOpen(true)}
+          >
+            + add deliverable
+          </button>
+        )}
+      </div>
       {popoverOpen && <NotesPopover athlete={athlete} onClose={() => setPopoverOpen(false)} />}
       {messagesOpen && <MessageModal athlete={athlete} onClose={() => setMessagesOpen(false)} />}
       {keywordsOpen && <KeywordsModal athlete={athlete} onClose={() => setKeywordsOpen(false)} />}
