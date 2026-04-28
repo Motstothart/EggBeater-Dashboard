@@ -95,7 +95,8 @@
           "id": "leila-d1",
           "label": "Initial college list (20-25 programs)",
           "due": "2026-03-29",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-04-28T16:24:25.330Z"
         },
         {
           "id": "leila-d2",
