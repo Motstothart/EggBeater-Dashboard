@@ -224,7 +224,14 @@
         "Lucas"
       ],
       "driveFolderUrl": null,
-      "deliverables": []
+      "deliverables": [
+        {
+          "id": "d-moiubne6-9sqbwo",
+          "label": "Set up in-person meeting during the summertime",
+          "due": "2026-06-30",
+          "status": "pending"
+        }
+      ]
     },
     {
       "id": "donny",
