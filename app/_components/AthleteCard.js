@@ -424,10 +424,14 @@ export default function AthleteCard({ athlete }) {
             {athlete.name}
             {openCount > 0 && <span className="note-badge">{openCount}</span>}
           </button>
-          <div className="athlete-meta">
-            {parents ? `Parent: ${parents}` : null}
-            {athlete.mentorName ? ` - Mentor: ${athlete.mentorName}` : null}
-          </div>
+          {athlete.mentorName && (
+            <div className="athlete-mentor">
+              <strong>Mentor:</strong> {athlete.mentorName}
+            </div>
+          )}
+          {parents && (
+            <div className="athlete-meta">Parent: {parents}</div>
+          )}
         </div>
         <div className="card-actions">
           <button className="icon-btn" onClick={onMarkMeeting} title="Mark meeting today" disabled={pending}>met</button>

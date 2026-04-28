@@ -1,10 +1,10 @@
 export default function SummaryStats({ summary }) {
   if (!summary) return null;
-  const items = [
-    { label: "overdue", value: summary.overdueAthletes, cls: "overdue" },
-    { label: "due soon", value: summary.warnAthletes, cls: "warn" },
-    { label: "no data", value: summary.noDataAthletes, cls: "no-data" },
-    { label: "on track", value: summary.okAthletes, cls: "ok" },
+  const meetingItems = [
+    { label: "overdue meetings", value: summary.overdueAthletes, cls: "overdue" },
+    { label: "meetings due soon", value: summary.warnAthletes, cls: "warn" },
+    { label: "no meeting data", value: summary.noDataAthletes, cls: "no-data" },
+    { label: "meetings on track", value: summary.okAthletes, cls: "ok" },
   ];
   const deliverableItems = [
     { label: "overdue deliverables", value: summary.overdueDeliverables, cls: "overdue" },
@@ -13,8 +13,8 @@ export default function SummaryStats({ summary }) {
   return (
     <div className="summary-stats">
       <div className="summary-group">
-        <span className="summary-label">Athletes ({summary.totalAthletes}):</span>
-        {items.map((item) => (
+        <span className="summary-label">Roster ({summary.totalAthletes}):</span>
+        {meetingItems.map((item) => (
           <span key={item.label} className={`stat-pill ${item.cls}`}>
             <strong>{item.value}</strong> {item.label}
           </span>
