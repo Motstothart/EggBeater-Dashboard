@@ -18,6 +18,7 @@ export default function AthleteForm({ tracks }) {
       mentorEmail: "",
       athleteEmail: "",
       parentEmails: "",
+      calendarKeywords: "",
       driveFolderUrl: "",
     };
   }
@@ -33,6 +34,7 @@ export default function AthleteForm({ tracks }) {
       mentorEmail: form.mentorEmail || null,
       athleteEmail: form.athleteEmail || null,
       parentEmails: form.parentEmails.split(",").map((s) => s.trim()).filter(Boolean),
+      calendarKeywords: form.calendarKeywords.split(",").map((s) => s.trim()).filter(Boolean),
       driveFolderUrl: form.driveFolderUrl || null,
     };
     startTransition(async () => {
@@ -128,6 +130,15 @@ export default function AthleteForm({ tracks }) {
               type="text"
               value={form.parentEmails}
               onChange={(e) => setForm({ ...form, parentEmails: e.target.value })}
+            />
+          </label>
+          <label>
+            Calendar keywords, comma-separated
+            <input
+              type="text"
+              value={form.calendarKeywords}
+              placeholder="Defaults to first name. e.g. Sam, Tabib"
+              onChange={(e) => setForm({ ...form, calendarKeywords: e.target.value })}
             />
           </label>
           <label>

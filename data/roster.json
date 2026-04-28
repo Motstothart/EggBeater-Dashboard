@@ -10,6 +10,7 @@
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
+      "calendarKeywords": ["Sam", "Tabib"],
       "driveFolderUrl": null,
       "deliverables": [
         {"id": "sam-d1", "label": "Initial college list (20-25 programs)", "due": "2026-03-29", "status": "pending"},
@@ -32,6 +33,7 @@
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
+      "calendarKeywords": ["Leila"],
       "driveFolderUrl": null,
       "deliverables": [
         {"id": "leila-d1", "label": "Initial college list (20-25 programs)", "due": "2026-03-29", "status": "pending"},
@@ -54,6 +56,7 @@
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
+      "calendarKeywords": ["Soren"],
       "driveFolderUrl": null,
       "deliverables": [
         {"id": "soren-d1", "label": "Initial college list (12-15 programs)", "due": "2026-05-03", "status": "pending"},
@@ -75,6 +78,7 @@
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
+      "calendarKeywords": ["Lucas"],
       "driveFolderUrl": null,
       "deliverables": []
     },
@@ -88,6 +92,7 @@
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
+      "calendarKeywords": ["Donny"],
       "driveFolderUrl": null,
       "deliverables": []
     },
@@ -101,6 +106,7 @@
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
+      "calendarKeywords": ["Preston"],
       "driveFolderUrl": null,
       "deliverables": []
     },
@@ -114,6 +120,7 @@
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
+      "calendarKeywords": ["Will"],
       "driveFolderUrl": null,
       "deliverables": []
     }

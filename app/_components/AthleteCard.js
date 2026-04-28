@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition, useRef, useEffect } from "react";
-import { addNote, toggleNote, deleteNote, toggleDeliverable, removeAthlete } from "@/lib/actions";
+import { addNote, toggleNote, deleteNote, toggleDeliverable, removeAthlete, updateAthleteKeywords } from "@/lib/actions";
 import { templates } from "@/lib/templates";
 
 function formatDate(d) {
@@ -221,9 +221,70 @@ function MessageModal({ athlete, onClose }) {
   );
 }
 
+function KeywordsModal({ athlete, onClose }) {
+  const [text, setText] = useState((athlete.calendarKeywords || []).join(", "));
+  const [pending, startTransition] = useTransition();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    function onClick(e) {
+      if (ref.current && !ref.current.contains(e.target)) onClose();
+    }
+    function onKey(e) {
+      if (e.key === "Escape") onClose();
+    }
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+
+  const save = () => {
+    const list = text.split(",").map((s) => s.trim()).filter(Boolean);
+    startTransition(async () => {
+      try {
+        await updateAthleteKeywords(athlete.id, list);
+        onClose();
+      } catch (e) {
+        alert(`Failed: ${e.message}`);
+      }
+    });
+  };
+
+  return (
+    <div className="modal-backdrop">
+      <div className="modal" ref={ref}>
+        <div className="modal-header">
+          <strong>Calendar keywords - {athlete.name}</strong>
+          <button className="icon-btn" onClick={onClose}>x</button>
+        </div>
+        <p className="muted" style={{ margin: "0 0 8px 0", fontSize: "0.85rem" }}>
+          Comma-separated. Any keyword found in an event title (case-insensitive) will match this athlete.
+        </p>
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="e.g. Sam, Tabib"
+          autoFocus
+        />
+        <div className="modal-actions">
+          <button type="button" className="btn ghost" onClick={onClose}>Cancel</button>
+          <button className="btn primary" onClick={save} disabled={pending}>
+            {pending ? "Saving..." : "Save"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function AthleteCard({ athlete }) {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [messagesOpen, setMessagesOpen] = useState(false);
+  const [keywordsOpen, setKeywordsOpen] = useState(false);
   const [pending, startTransition] = useTransition();
 
   const parents = athlete.parents.map((p) => p.name).join(" and ");
@@ -258,6 +319,7 @@ export default function AthleteCard({ athlete }) {
           </div>
         </div>
         <div className="card-actions">
+          <button className="icon-btn" onClick={() => setKeywordsOpen(true)} title="Edit calendar keywords">kw</button>
           <button className="icon-btn" onClick={() => setMessagesOpen(true)} title="Message templates">msg</button>
           <button className="icon-btn" onClick={onRemove} title="Remove athlete" disabled={pending}>x</button>
         </div>
@@ -275,6 +337,7 @@ export default function AthleteCard({ athlete }) {
       )}
       {popoverOpen && <NotesPopover athlete={athlete} onClose={() => setPopoverOpen(false)} />}
       {messagesOpen && <MessageModal athlete={athlete} onClose={() => setMessagesOpen(false)} />}
+      {keywordsOpen && <KeywordsModal athlete={athlete} onClose={() => setKeywordsOpen(false)} />}
     </div>
   );
 }
