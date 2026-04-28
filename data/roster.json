@@ -307,7 +307,14 @@
         "Evan"
       ],
       "driveFolderUrl": null,
-      "deliverables": []
+      "deliverables": [
+        {
+          "id": "d-moiu9p2e-5l5ebo",
+          "label": "Review template email ahead of college outreach",
+          "due": "2026-05-03",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "tracks": [
