@@ -24,7 +24,8 @@
           "id": "sam-d1",
           "label": "Initial college list (20-25 programs)",
           "due": "2026-03-29",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-04-28T05:20:22.824Z"
         },
         {
           "id": "sam-d2",
