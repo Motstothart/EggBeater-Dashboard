@@ -38,8 +38,8 @@
           "id": "sam-d3",
           "label": "Refined list (12-15 programs) with detailed research",
           "due": "2026-04-18",
-          "status": "done",
-          "completedAt": "2026-04-28T05:20:25.697Z"
+          "status": "pending",
+          "completedAt": null
         },
         {
           "id": "sam-d4",
