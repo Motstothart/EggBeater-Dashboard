@@ -102,7 +102,8 @@
           "id": "leila-d2",
           "label": "Recruiting Guide",
           "due": "2026-04-12",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-04-28T16:24:26.467Z"
         },
         {
           "id": "leila-d3",
