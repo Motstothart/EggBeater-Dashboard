@@ -334,6 +334,22 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "sam-g",
+      "name": "Sam G.",
+      "track": "11th-retainer",
+      "classOf": 2028,
+      "parents": [],
+      "mentorName": null,
+      "mentorEmail": null,
+      "athleteEmail": null,
+      "parentEmails": [],
+      "calendarKeywords": [
+        "Sam"
+      ],
+      "driveFolderUrl": null,
+      "deliverables": []
     }
   ],
   "tracks": [
