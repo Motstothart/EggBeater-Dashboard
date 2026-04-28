@@ -69,6 +69,12 @@
           "label": "Follow-up cycle starts (every 2-3 weeks)",
           "due": "2026-06-29",
           "status": "pending"
+        },
+        {
+          "id": "d-moiucbot-as3sqa",
+          "label": "Set up meetings with Ilias and Otto",
+          "due": "2026-05-03",
+          "status": "pending"
         }
       ]
     },
