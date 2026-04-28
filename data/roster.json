@@ -5,22 +5,69 @@
       "name": "Sam Tabib",
       "track": "10th-roadmap",
       "classOf": 2028,
-      "parents": [{"name": "Shelly"}],
+      "parents": [
+        {
+          "name": "Shelly"
+        }
+      ],
       "mentorName": null,
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
-      "calendarKeywords": ["Sam", "Tabib"],
+      "calendarKeywords": [
+        "Sam",
+        "Tabib"
+      ],
       "driveFolderUrl": null,
       "deliverables": [
-        {"id": "sam-d1", "label": "Initial college list (20-25 programs)", "due": "2026-03-29", "status": "pending"},
-        {"id": "sam-d2", "label": "Recruiting Guide", "due": "2026-04-12", "status": "pending"},
-        {"id": "sam-d3", "label": "Refined list (12-15 programs) with detailed research", "due": "2026-04-18", "status": "pending"},
-        {"id": "sam-d4", "label": "First drafts of personalized outreach emails (template first)", "due": "2026-05-10", "status": "pending"},
-        {"id": "sam-d5", "label": "10-12 finalized outreach emails (1-2 rounds editing)", "due": "2026-05-30", "status": "pending"},
-        {"id": "sam-d6", "label": "Practice phone conversations with mentor", "due": "2026-06-14", "status": "pending"},
-        {"id": "sam-d7", "label": "All outreach emails sent (June 1-15 window)", "due": "2026-06-15", "status": "pending"},
-        {"id": "sam-d8", "label": "Follow-up cycle starts (every 2-3 weeks)", "due": "2026-06-29", "status": "pending"}
+        {
+          "id": "sam-d1",
+          "label": "Initial college list (20-25 programs)",
+          "due": "2026-03-29",
+          "status": "pending"
+        },
+        {
+          "id": "sam-d2",
+          "label": "Recruiting Guide",
+          "due": "2026-04-12",
+          "status": "pending"
+        },
+        {
+          "id": "sam-d3",
+          "label": "Refined list (12-15 programs) with detailed research",
+          "due": "2026-04-18",
+          "status": "pending"
+        },
+        {
+          "id": "sam-d4",
+          "label": "First drafts of personalized outreach emails (template first)",
+          "due": "2026-05-10",
+          "status": "pending"
+        },
+        {
+          "id": "sam-d5",
+          "label": "10-12 finalized outreach emails (1-2 rounds editing)",
+          "due": "2026-05-30",
+          "status": "pending"
+        },
+        {
+          "id": "sam-d6",
+          "label": "Practice phone conversations with mentor",
+          "due": "2026-06-14",
+          "status": "pending"
+        },
+        {
+          "id": "sam-d7",
+          "label": "All outreach emails sent (June 1-15 window)",
+          "due": "2026-06-15",
+          "status": "pending"
+        },
+        {
+          "id": "sam-d8",
+          "label": "Follow-up cycle starts (every 2-3 weeks)",
+          "due": "2026-06-29",
+          "status": "pending"
+        }
       ]
     },
     {
@@ -28,22 +75,68 @@
       "name": "Leila",
       "track": "10th-roadmap",
       "classOf": 2028,
-      "parents": [{"name": "Polly"}],
+      "parents": [
+        {
+          "name": "Polly"
+        }
+      ],
       "mentorName": null,
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
-      "calendarKeywords": ["Leila"],
+      "calendarKeywords": [
+        "Leila"
+      ],
       "driveFolderUrl": null,
       "deliverables": [
-        {"id": "leila-d1", "label": "Initial college list (20-25 programs)", "due": "2026-03-29", "status": "pending"},
-        {"id": "leila-d2", "label": "Recruiting Guide", "due": "2026-04-12", "status": "pending"},
-        {"id": "leila-d3", "label": "Refined list (12-15 programs) with detailed research", "due": "2026-04-18", "status": "pending"},
-        {"id": "leila-d4", "label": "First drafts of personalized outreach emails (template first)", "due": "2026-05-10", "status": "pending"},
-        {"id": "leila-d5", "label": "10-12 finalized outreach emails (1-2 rounds editing)", "due": "2026-05-30", "status": "pending"},
-        {"id": "leila-d6", "label": "Practice phone conversations with mentor", "due": "2026-06-14", "status": "pending"},
-        {"id": "leila-d7", "label": "All outreach emails sent (June 1-15 window)", "due": "2026-06-15", "status": "pending"},
-        {"id": "leila-d8", "label": "Follow-up cycle starts (every 2-3 weeks)", "due": "2026-06-29", "status": "pending"}
+        {
+          "id": "leila-d1",
+          "label": "Initial college list (20-25 programs)",
+          "due": "2026-03-29",
+          "status": "pending"
+        },
+        {
+          "id": "leila-d2",
+          "label": "Recruiting Guide",
+          "due": "2026-04-12",
+          "status": "pending"
+        },
+        {
+          "id": "leila-d3",
+          "label": "Refined list (12-15 programs) with detailed research",
+          "due": "2026-04-18",
+          "status": "pending"
+        },
+        {
+          "id": "leila-d4",
+          "label": "First drafts of personalized outreach emails (template first)",
+          "due": "2026-05-10",
+          "status": "pending"
+        },
+        {
+          "id": "leila-d5",
+          "label": "10-12 finalized outreach emails (1-2 rounds editing)",
+          "due": "2026-05-30",
+          "status": "pending"
+        },
+        {
+          "id": "leila-d6",
+          "label": "Practice phone conversations with mentor",
+          "due": "2026-06-14",
+          "status": "pending"
+        },
+        {
+          "id": "leila-d7",
+          "label": "All outreach emails sent (June 1-15 window)",
+          "due": "2026-06-15",
+          "status": "pending"
+        },
+        {
+          "id": "leila-d8",
+          "label": "Follow-up cycle starts (every 2-3 weeks)",
+          "due": "2026-06-29",
+          "status": "pending"
+        }
       ]
     },
     {
@@ -51,21 +144,62 @@
       "name": "Soren",
       "track": "10th-roadmap",
       "classOf": 2028,
-      "parents": [{"name": "Amy"}],
+      "parents": [
+        {
+          "name": "Amy"
+        }
+      ],
       "mentorName": "Ilias",
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
-      "calendarKeywords": ["Soren"],
+      "calendarKeywords": [
+        "Soren"
+      ],
       "driveFolderUrl": null,
       "deliverables": [
-        {"id": "soren-d1", "label": "Initial college list (12-15 programs)", "due": "2026-05-03", "status": "pending"},
-        {"id": "soren-d2", "label": "Recruiting Reference document", "due": "2026-05-03", "status": "pending"},
-        {"id": "soren-d3", "label": "Template outreach email", "due": "2026-05-03", "status": "pending"},
-        {"id": "soren-d4", "label": "Refined list (12-15 programs) with detailed research", "due": "2026-05-15", "status": "pending"},
-        {"id": "soren-d5", "label": "8-10 finalized outreach emails (1-2 rounds editing)", "due": "2026-05-30", "status": "pending"},
-        {"id": "soren-d6", "label": "All outreach emails sent (June 1-15 window)", "due": "2026-06-15", "status": "pending"},
-        {"id": "soren-d7", "label": "Follow-up cycle starts (every 2 weeks)", "due": "2026-06-29", "status": "pending"}
+        {
+          "id": "soren-d1",
+          "label": "Initial college list (12-15 programs)",
+          "due": "2026-05-03",
+          "status": "pending"
+        },
+        {
+          "id": "soren-d2",
+          "label": "Recruiting Reference document",
+          "due": "2026-05-03",
+          "status": "pending"
+        },
+        {
+          "id": "soren-d3",
+          "label": "Template outreach email",
+          "due": "2026-05-03",
+          "status": "pending"
+        },
+        {
+          "id": "soren-d4",
+          "label": "Refined list (12-15 programs) with detailed research",
+          "due": "2026-05-15",
+          "status": "pending"
+        },
+        {
+          "id": "soren-d5",
+          "label": "8-10 finalized outreach emails (1-2 rounds editing)",
+          "due": "2026-05-30",
+          "status": "pending"
+        },
+        {
+          "id": "soren-d6",
+          "label": "All outreach emails sent (June 1-15 window)",
+          "due": "2026-06-15",
+          "status": "pending"
+        },
+        {
+          "id": "soren-d7",
+          "label": "Follow-up cycle starts (every 2 weeks)",
+          "due": "2026-06-29",
+          "status": "pending"
+        }
       ]
     },
     {
@@ -73,12 +207,18 @@
       "name": "Lucas",
       "track": "9th",
       "classOf": null,
-      "parents": [{"name": "Anna"}],
+      "parents": [
+        {
+          "name": "Anna"
+        }
+      ],
       "mentorName": null,
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
-      "calendarKeywords": ["Lucas"],
+      "calendarKeywords": [
+        "Lucas - Lukas"
+      ],
       "driveFolderUrl": null,
       "deliverables": []
     },
@@ -87,12 +227,18 @@
       "name": "Donny",
       "track": "9th",
       "classOf": null,
-      "parents": [{"name": "Jennifer"}],
+      "parents": [
+        {
+          "name": "Jennifer"
+        }
+      ],
       "mentorName": null,
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
-      "calendarKeywords": ["Donny"],
+      "calendarKeywords": [
+        "Donny"
+      ],
       "driveFolderUrl": null,
       "deliverables": []
     },
@@ -101,12 +247,18 @@
       "name": "Preston",
       "track": "9th",
       "classOf": null,
-      "parents": [{"name": "Ann"}],
+      "parents": [
+        {
+          "name": "Ann"
+        }
+      ],
       "mentorName": null,
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
-      "calendarKeywords": ["Preston"],
+      "calendarKeywords": [
+        "Preston"
+      ],
       "driveFolderUrl": null,
       "deliverables": []
     },
@@ -115,12 +267,21 @@
       "name": "Will",
       "track": "9th",
       "classOf": null,
-      "parents": [{"name": "Todd"}, {"name": "Lauren"}],
+      "parents": [
+        {
+          "name": "Todd"
+        },
+        {
+          "name": "Lauren"
+        }
+      ],
       "mentorName": null,
       "mentorEmail": null,
       "athleteEmail": null,
       "parentEmails": [],
-      "calendarKeywords": ["Will"],
+      "calendarKeywords": [
+        "Will"
+      ],
       "driveFolderUrl": null,
       "deliverables": []
     }
