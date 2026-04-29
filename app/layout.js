@@ -1,18 +1,26 @@
-import { Cinzel, IM_Fell_English } from "next/font/google";
+import { Cinzel, IM_Fell_English, Merriweather } from "next/font/google";
 import "./globals.css";
 
-const headingFont = Cinzel({
+const cinzel = Cinzel({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
-  variable: "--font-heading",
+  variable: "--font-cinzel",
   display: "swap",
 });
 
-const bodyFont = IM_Fell_English({
+const imFell = IM_Fell_English({
   subsets: ["latin"],
   weight: ["400"],
   style: ["normal", "italic"],
-  variable: "--font-body",
+  variable: "--font-im-fell",
+  display: "swap",
+});
+
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-merriweather",
   display: "swap",
 });
 
@@ -23,7 +31,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${cinzel.variable} ${imFell.variable} ${merriweather.variable}`}
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

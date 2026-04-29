@@ -7,6 +7,7 @@ import PunchList from "./_components/PunchList";
 import SetupBanner from "./_components/SetupBanner";
 import SummaryStats from "./_components/SummaryStats";
 import SyncButton from "./_components/SyncButton";
+import ThemeSwitcher from "./_components/ThemeSwitcher";
 
 export const dynamic = "force-dynamic";
 
@@ -45,6 +46,7 @@ export default async function Page() {
           </div>
         </div>
         <div className="page-head-actions">
+          <ThemeSwitcher />
           <SyncButton enabled={googleEnabled && writeEnabled} />
           {writeEnabled && <AthleteForm tracks={rosterTracks} />}
         </div>
