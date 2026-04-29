@@ -116,8 +116,8 @@
           "id": "leila-d3",
           "label": "Refined list (12-15 programs) with detailed research",
           "due": "2026-04-18",
-          "status": "done",
-          "completedAt": "2026-04-29T04:08:52.001Z"
+          "status": "pending",
+          "completedAt": null
         },
         {
           "id": "leila-d4",
