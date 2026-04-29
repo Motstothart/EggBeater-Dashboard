@@ -11,7 +11,7 @@ import ThemeSwitcher from "./_components/ThemeSwitcher";
 
 export const dynamic = "force-dynamic";
 
-function Track({ track }) {
+function Track({ track, allTracks }) {
   return (
     <div className="track">
       <h3>{track.label}</h3>
@@ -19,7 +19,7 @@ function Track({ track }) {
       {track.athletes.length === 0 ? (
         <div className="empty">No athletes in this track yet.</div>
       ) : (
-        track.athletes.map((a) => <AthleteCard key={a.id} athlete={a} />)
+        track.athletes.map((a) => <AthleteCard key={a.id} athlete={a} tracks={allTracks} />)
       )}
     </div>
   );
@@ -60,11 +60,11 @@ export default async function Page() {
 
       <section className="tracks">
         {tracks.map((t) => (
-          <Track key={t.id} track={t} />
+          <Track key={t.id} track={t} allTracks={rosterTracks} />
         ))}
       </section>
 
-      <div className="footer">"met" marks today's meeting - "kw" edits keywords - "msg" gets templates - click name for notes.</div>
+      <div className="footer">"met" marks today's meeting - "edit" updates athlete info - "msg" gets templates - click name for notes.</div>
     </main>
   );
 }

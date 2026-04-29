@@ -749,9 +749,10 @@ h1 {
 
 .deliverable {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: auto 1fr auto auto auto;
 }
 
+.deliverable-edit,
 .deliverable-delete {
   font-size: 10px;
   padding: 1px 5px;
@@ -760,8 +761,30 @@ h1 {
   transition: opacity 120ms ease;
 }
 
+.deliverable:hover .deliverable-edit,
 .deliverable:hover .deliverable-delete {
   opacity: 1;
+}
+
+.deliverable-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 6px 0;
+  padding: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+}
+
+.deliverable-edit-form input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 2px;
+  padding: 5px 8px;
+  font-size: 13px;
+  font-family: var(--font-body);
 }
 
 .add-deliverable-btn {
