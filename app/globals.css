@@ -14,8 +14,21 @@
   --overdue: #8a2020;
   --no-data: #8a7d5e;
   --done: #9a8866;
-  --font-heading: var(--font-heading), "Cinzel", "Trajan Pro", "IM Fell English SC", Georgia, serif;
-  --font-body: var(--font-body), "IM Fell English", "Garamond", "Palatino Linotype", Georgia, serif;
+  --font-heading: var(--font-cinzel, "Cinzel", "Trajan Pro", Georgia, serif);
+  --font-body: var(--font-im-fell, "IM Fell English", "Garamond", "Palatino Linotype", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 18% 22%, rgba(139, 105, 60, 0.12) 0px, transparent 55%),
+    radial-gradient(at 82% 78%, rgba(139, 105, 60, 0.18) 0px, transparent 55%),
+    radial-gradient(at 50% 50%, rgba(255, 245, 220, 0.18) 0px, transparent 60%);
+  --grain-a: rgba(120, 80, 40, 0.018);
+  --grain-b: rgba(120, 80, 40, 0.012);
+  --grain-opacity: 0.7;
+  --surface-tint: rgba(255, 245, 220, 0.4);
+  --surface-tint-hover: rgba(255, 245, 220, 0.7);
+  --modal-backdrop-color: rgba(40, 25, 10, 0.55);
+  --modal-bg-image:
+    radial-gradient(at 18% 22%, rgba(139, 105, 60, 0.10) 0px, transparent 55%),
+    radial-gradient(at 82% 78%, rgba(139, 105, 60, 0.15) 0px, transparent 55%);
 }
 
 * {
@@ -27,10 +40,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--bg);
-  background-image:
-    radial-gradient(at 18% 22%, rgba(139, 105, 60, 0.12) 0px, transparent 55%),
-    radial-gradient(at 82% 78%, rgba(139, 105, 60, 0.18) 0px, transparent 55%),
-    radial-gradient(at 50% 50%, rgba(255, 245, 220, 0.18) 0px, transparent 60%);
+  background-image: var(--body-bg-image);
   background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-body);
@@ -46,21 +56,21 @@ body::before {
   background-image:
     repeating-linear-gradient(
       0deg,
-      rgba(120, 80, 40, 0.018) 0px,
-      rgba(120, 80, 40, 0.018) 1px,
+      var(--grain-a) 0px,
+      var(--grain-a) 1px,
       transparent 1px,
       transparent 3px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(120, 80, 40, 0.012) 0px,
-      rgba(120, 80, 40, 0.012) 1px,
+      var(--grain-b) 0px,
+      var(--grain-b) 1px,
       transparent 1px,
       transparent 4px
     );
   z-index: 0;
   mix-blend-mode: multiply;
-  opacity: 0.7;
+  opacity: var(--grain-opacity);
 }
 
 main {
@@ -309,7 +319,7 @@ h1 {
 }
 
 .icon-btn {
-  background: rgba(255, 245, 220, 0.4);
+  background: var(--surface-tint);
   border: 1px solid var(--border);
   color: var(--text);
   padding: 2px 8px;
@@ -324,7 +334,7 @@ h1 {
 .icon-btn:hover {
   color: var(--accent);
   border-color: var(--border-strong);
-  background: rgba(255, 245, 220, 0.7);
+  background: var(--surface-tint-hover);
 }
 
 .icon-btn:disabled {
@@ -343,7 +353,7 @@ h1 {
   font-size: 12px;
   padding: 3px 10px;
   border-radius: 999px;
-  background: rgba(255, 245, 220, 0.5);
+  background: var(--surface-tint);
   border: 1px solid var(--border);
   color: var(--muted);
   font-style: italic;
@@ -506,7 +516,7 @@ h1 {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(40, 25, 10, 0.55);
+  background: var(--modal-backdrop-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -516,9 +526,7 @@ h1 {
 
 .modal {
   background: var(--surface);
-  background-image:
-    radial-gradient(at 18% 22%, rgba(139, 105, 60, 0.1) 0px, transparent 55%),
-    radial-gradient(at 82% 78%, rgba(139, 105, 60, 0.15) 0px, transparent 55%);
+  background-image: var(--modal-bg-image);
   border: 1px solid var(--border-strong);
   border-radius: 2px;
   padding: 16px 18px;
@@ -714,7 +722,7 @@ h1 {
   font-size: 13px;
   padding: 3px 12px;
   border-radius: 999px;
-  background: rgba(255, 245, 220, 0.5);
+  background: var(--surface-tint);
   border: 1px solid var(--border);
   color: var(--muted);
   display: inline-flex;
@@ -809,4 +817,230 @@ h1 {
 
 .muted {
   color: var(--muted);
+}
+
+.theme-switcher {
+  background: var(--surface-tint);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: var(--font-body);
+  font-style: italic;
+}
+
+.theme-switcher:hover {
+  border-color: var(--border-strong);
+}
+
+/* ────────────────────────────────────────────────────────────────
+   Alternate themes — apply via document.documentElement.dataset.theme
+   ──────────────────────────────────────────────────────────────── */
+
+/* Obsidian — dark, cyan accent, modern sports analytics */
+html[data-theme="obsidian"] {
+  --bg: #0e0e12;
+  --bg-deep: #070709;
+  --surface: #17171d;
+  --surface-2: #1e1e26;
+  --surface-3: #25252f;
+  --border: #2a2a3a;
+  --border-strong: #00c8ee;
+  --text: #e4e6f4;
+  --muted: #6464a0;
+  --accent: #00c8ee;
+  --ok: #00d490;
+  --warn: #ffaa00;
+  --overdue: #ff4a4a;
+  --no-data: #5858a8;
+  --done: #334466;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body-bg-image: none;
+  --grain-a: rgba(0, 200, 238, 0.012);
+  --grain-b: rgba(0, 200, 238, 0.008);
+  --grain-opacity: 0.5;
+  --surface-tint: rgba(255, 255, 255, 0.05);
+  --surface-tint-hover: rgba(255, 255, 255, 0.10);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.8);
+  --modal-bg-image: none;
+}
+
+/* Naval Log — deep navy, brass gold, maritime */
+html[data-theme="naval"] {
+  --bg: #0f1930;
+  --bg-deep: #090f1e;
+  --surface: #162240;
+  --surface-2: #1c2c52;
+  --surface-3: #14203a;
+  --border: #283e6e;
+  --border-strong: #c9a84c;
+  --text: #f0e8cc;
+  --muted: #7888aa;
+  --accent: #c9a84c;
+  --ok: #3ab878;
+  --warn: #c9a84c;
+  --overdue: #c04444;
+  --no-data: #506080;
+  --done: #3a5470;
+  --font-body: var(--font-merriweather, "Merriweather", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 30% 30%, rgba(20, 50, 110, 0.35) 0px, transparent 60%),
+    radial-gradient(at 70% 70%, rgba(10, 25, 60, 0.45) 0px, transparent 60%);
+  --grain-a: rgba(200, 168, 76, 0.015);
+  --grain-b: rgba(200, 168, 76, 0.010);
+  --grain-opacity: 0.5;
+  --surface-tint: rgba(255, 255, 255, 0.05);
+  --surface-tint-hover: rgba(255, 255, 255, 0.10);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.75);
+  --modal-bg-image: none;
+}
+
+/* Scholar — burgundy/wine, gold rule lines, university registry */
+html[data-theme="scholar"] {
+  --bg: #2d0a1a;
+  --bg-deep: #1e0610;
+  --surface: #3d1228;
+  --surface-2: #481632;
+  --surface-3: #521a38;
+  --border: #7a2a4e;
+  --border-strong: #c4a040;
+  --text: #f5e8d0;
+  --muted: #c09090;
+  --accent: #c4a040;
+  --ok: #5aa060;
+  --warn: #c4a040;
+  --overdue: #e04444;
+  --no-data: #8a7080;
+  --done: #7a5a5a;
+  --body-bg-image:
+    radial-gradient(at 20% 80%, rgba(100, 20, 60, 0.4) 0px, transparent 60%),
+    radial-gradient(at 80% 20%, rgba(60, 10, 30, 0.4) 0px, transparent 60%);
+  --grain-a: rgba(196, 160, 64, 0.018);
+  --grain-b: rgba(196, 160, 64, 0.012);
+  --grain-opacity: 0.5;
+  --surface-tint: rgba(255, 255, 255, 0.05);
+  --surface-tint-hover: rgba(255, 255, 255, 0.10);
+  --modal-backdrop-color: rgba(20, 0, 8, 0.8);
+  --modal-bg-image: none;
+}
+
+/* Forest Ledger — dark green, copper, naturalist's journal */
+html[data-theme="forest"] {
+  --bg: #182818;
+  --bg-deep: #0f1c0f;
+  --surface: #1e3020;
+  --surface-2: #243826;
+  --surface-3: #1a2c1c;
+  --border: #345234;
+  --border-strong: #7ab040;
+  --text: #f0ead8;
+  --muted: #90b080;
+  --accent: #7ab040;
+  --ok: #6ac060;
+  --warn: #c0a840;
+  --overdue: #c05050;
+  --no-data: #608070;
+  --done: #4a6050;
+  --font-body: var(--font-merriweather, "Merriweather", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 20% 30%, rgba(20, 60, 20, 0.4) 0px, transparent 60%),
+    radial-gradient(at 80% 70%, rgba(10, 35, 10, 0.5) 0px, transparent 60%);
+  --grain-a: rgba(120, 176, 64, 0.015);
+  --grain-b: rgba(120, 176, 64, 0.010);
+  --grain-opacity: 0.5;
+  --surface-tint: rgba(255, 255, 255, 0.05);
+  --surface-tint-hover: rgba(255, 255, 255, 0.10);
+  --modal-backdrop-color: rgba(0, 8, 0, 0.75);
+  --modal-bg-image: none;
+}
+
+/* Charcoal & Chalk — blackboard, off-white, minimalist */
+html[data-theme="charcoal"] {
+  --bg: #1a1a1e;
+  --bg-deep: #121216;
+  --surface: #222228;
+  --surface-2: #2c2c34;
+  --surface-3: #32323a;
+  --border: #3c3c48;
+  --border-strong: #d0d0e0;
+  --text: #e8e8f0;
+  --muted: #888898;
+  --accent: #d0d0e0;
+  --ok: #60d090;
+  --warn: #e8c060;
+  --overdue: #e06060;
+  --no-data: #7878a0;
+  --done: #5a6070;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body-bg-image: none;
+  --grain-a: rgba(200, 200, 220, 0.018);
+  --grain-b: rgba(200, 200, 220, 0.012);
+  --grain-opacity: 0.4;
+  --surface-tint: rgba(255, 255, 255, 0.05);
+  --surface-tint-hover: rgba(255, 255, 255, 0.10);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.8);
+  --modal-bg-image: none;
+}
+
+/* Rosewood — mahogany, ivory, gold, leather planner */
+html[data-theme="rosewood"] {
+  --bg: #2e1a14;
+  --bg-deep: #1e0e0a;
+  --surface: #3c2218;
+  --surface-2: #462a1e;
+  --surface-3: #3a2016;
+  --border: #6a3a2a;
+  --border-strong: #c4a050;
+  --text: #f5e8d8;
+  --muted: #c0a090;
+  --accent: #c4a050;
+  --ok: #7aaa60;
+  --warn: #c4a050;
+  --overdue: #cc4444;
+  --no-data: #9a8070;
+  --done: #7a6050;
+  --font-body: var(--font-merriweather, "Merriweather", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 20% 20%, rgba(100, 50, 30, 0.3) 0px, transparent 55%),
+    radial-gradient(at 80% 80%, rgba(60, 25, 15, 0.4) 0px, transparent 55%);
+  --grain-a: rgba(160, 100, 60, 0.020);
+  --grain-b: rgba(160, 100, 60, 0.014);
+  --grain-opacity: 0.55;
+  --surface-tint: rgba(255, 255, 255, 0.05);
+  --surface-tint-hover: rgba(255, 255, 255, 0.10);
+  --modal-backdrop-color: rgba(20, 5, 0, 0.78);
+  --modal-bg-image: none;
+}
+
+/* Ghost — near-white, minimal, modern */
+html[data-theme="ghost"] {
+  --bg: #f4f4f6;
+  --bg-deep: #eaeaec;
+  --surface: #ffffff;
+  --surface-2: #f8f8fa;
+  --surface-3: #eeeeef;
+  --border: #d8d8de;
+  --border-strong: #8888a0;
+  --text: #1c1c28;
+  --muted: #66667a;
+  --accent: #3a3acc;
+  --ok: #1a8a3a;
+  --warn: #b87000;
+  --overdue: #cc2222;
+  --no-data: #7878a0;
+  --done: #8888a0;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body-bg-image: none;
+  --grain-a: rgba(0, 0, 0, 0.008);
+  --grain-b: rgba(0, 0, 0, 0.005);
+  --grain-opacity: 0.3;
+  --surface-tint: rgba(0, 0, 0, 0.04);
+  --surface-tint-hover: rgba(0, 0, 0, 0.08);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.4);
+  --modal-bg-image: none;
 }
