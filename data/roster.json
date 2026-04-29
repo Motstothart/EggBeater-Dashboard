@@ -74,8 +74,8 @@
           "id": "d-moiucbot-as3sqa",
           "label": "Set up meetings with Ilias and Otto",
           "due": "2026-05-03",
-          "status": "done",
-          "completedAt": "2026-04-29T04:09:10.497Z"
+          "status": "pending",
+          "completedAt": null
         }
       ]
     },
