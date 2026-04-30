@@ -21,14 +21,8 @@ export default function SyncButton({ enabled }) {
       const result = await syncCalendarNow();
       if (!result.ok) {
         setMsg(`Failed: ${result.error}`);
-        return;
+        setTimeout(() => setMsg(null), 4000);
       }
-      if (result.changed) {
-        setMsg(`Synced - ${result.eventCount} events scanned`);
-      } else {
-        setMsg(`No changes - ${result.eventCount} events scanned`);
-      }
-      setTimeout(() => setMsg(null), 4000);
     });
   };
 
