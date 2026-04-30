@@ -3,6 +3,7 @@ import { isWriteEnabled } from "@/lib/github";
 import { isGoogleConfigured } from "@/lib/google";
 import AthleteCard from "./_components/AthleteCard";
 import AthleteForm from "./_components/AthleteForm";
+import ChatPanel from "./_components/ChatPanel";
 import PunchList from "./_components/PunchList";
 import SetupBanner from "./_components/SetupBanner";
 import SummaryStats from "./_components/SummaryStats";
@@ -65,6 +66,7 @@ export default async function Page() {
       </section>
 
       <div className="footer">"met" marks today's meeting - "edit" updates athlete info - "msg" gets templates - click name for notes.</div>
+      <ChatPanel />
     </main>
   );
 }
