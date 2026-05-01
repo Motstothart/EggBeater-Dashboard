@@ -1,12 +1,12 @@
 {
-  "punchList": [
+  "punchList": [],
+  "completed": [
     {
       "id": "punch-mok7ibb3-v6lcpg",
       "text": "Spend some time with Evan's email",
-      "createdAt": "2026-04-29T15:25:21.471Z"
-    }
-  ],
-  "completed": [
+      "createdAt": "2026-04-29T15:25:21.471Z",
+      "completedAt": "2026-05-01T23:33:14.078Z"
+    },
     {
       "id": "punch-moiuat6u-8i7ty7",
       "text": "Test",
