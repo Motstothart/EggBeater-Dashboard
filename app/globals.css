@@ -1222,3 +1222,316 @@ html[data-theme="ghost"] {
   --modal-backdrop-color: rgba(0, 0, 0, 0.4);
   --modal-bg-image: none;
 }
+
+/* Sunset Coast — warm peach, cream, terracotta, navy */
+html[data-theme="sunset"] {
+  --bg: #fdc394; --bg-deep: #f0a878;
+  --surface: #fff5e6; --surface-2: #ffeed6; --surface-3: #f8e0c0;
+  --border: #d49060; --border-strong: #a04020;
+  --text: #1a2a4a; --muted: #7a6a4a; --accent: #c9512e;
+  --ok: #5a8a3a; --warn: #c98a1c; --overdue: #a02020; --no-data: #8a7a6a; --done: #b09680;
+  --font-body: var(--font-merriweather, "Merriweather", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 20% 20%, rgba(255, 180, 130, 0.5) 0px, transparent 60%),
+    radial-gradient(at 80% 80%, rgba(220, 130, 80, 0.4) 0px, transparent 60%);
+  --grain-a: rgba(180, 100, 40, 0.012); --grain-b: rgba(180, 100, 40, 0.008); --grain-opacity: 0.4;
+  --surface-tint: rgba(255, 240, 220, 0.4); --surface-tint-hover: rgba(255, 240, 220, 0.7);
+  --modal-backdrop-color: rgba(80, 40, 10, 0.55); --modal-bg-image: none;
+}
+
+/* Mojave — sand, dusty rose, terracotta, sage */
+html[data-theme="mojave"] {
+  --bg: #e8d5b7; --bg-deep: #d4c19a;
+  --surface: #f0d4c0; --surface-2: #e6c4ac; --surface-3: #ddb898;
+  --border: #b89070; --border-strong: #8a4a2a;
+  --text: #3a2418; --muted: #7a5a40; --accent: #b8451c;
+  --ok: #6a8a4a; --warn: #c98a1c; --overdue: #a02020; --no-data: #8a7060; --done: #b09680;
+  --font-body: var(--font-merriweather, "Merriweather", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 25% 25%, rgba(200, 140, 90, 0.3) 0px, transparent 55%),
+    radial-gradient(at 75% 75%, rgba(180, 110, 60, 0.35) 0px, transparent 55%);
+  --grain-a: rgba(140, 80, 40, 0.018); --grain-b: rgba(140, 80, 40, 0.012); --grain-opacity: 0.5;
+  --surface-tint: rgba(255, 230, 200, 0.4); --surface-tint-hover: rgba(255, 230, 200, 0.7);
+  --modal-backdrop-color: rgba(60, 30, 10, 0.6); --modal-bg-image: none;
+}
+
+/* Vellum — ivory, walnut, oxblood */
+html[data-theme="vellum"] {
+  --bg: #f5ecd9; --bg-deep: #e8dcc0;
+  --surface: #faf2e0; --surface-2: #f0e8d0; --surface-3: #e8dec5;
+  --border: #b89870; --border-strong: #4a3018;
+  --text: #2e1810; --muted: #6a5240; --accent: #6a1a1a;
+  --ok: #4a6b2e; --warn: #b87a1c; --overdue: #8a2020; --no-data: #8a7d5e; --done: #9a8866;
+  --body-bg-image: none;
+  --grain-a: rgba(120, 80, 40, 0.010); --grain-b: rgba(120, 80, 40, 0.006); --grain-opacity: 0.3;
+  --surface-tint: rgba(255, 245, 220, 0.35); --surface-tint-hover: rgba(255, 245, 220, 0.6);
+  --modal-backdrop-color: rgba(40, 25, 10, 0.5); --modal-bg-image: none;
+}
+
+/* Midnight Library — deep navy, indigo, brass, cream */
+html[data-theme="midnight"] {
+  --bg: #0a1428; --bg-deep: #050a18;
+  --surface: #14203a; --surface-2: #1a2848; --surface-3: #0f1830;
+  --border: #2a3a60; --border-strong: #c9a84c;
+  --text: #f0e8cc; --muted: #8090b0; --accent: #c9a84c;
+  --ok: #5aa060; --warn: #c9a84c; --overdue: #d04040; --no-data: #6070a0; --done: #4a5470;
+  --font-body: var(--font-im-fell, "IM Fell English", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 30% 30%, rgba(20, 35, 80, 0.4) 0px, transparent 60%),
+    radial-gradient(at 70% 70%, rgba(10, 18, 40, 0.5) 0px, transparent 60%);
+  --grain-a: rgba(200, 168, 76, 0.012); --grain-b: rgba(200, 168, 76, 0.008); --grain-opacity: 0.5;
+  --surface-tint: rgba(255, 255, 255, 0.05); --surface-tint-hover: rgba(255, 255, 255, 0.10);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.8); --modal-bg-image: none;
+}
+
+/* Saffron — bright cream, paprika, olive */
+html[data-theme="saffron"] {
+  --bg: #fef3d4; --bg-deep: #f5e0a8;
+  --surface: #fff8e0; --surface-2: #f8eec8; --surface-3: #f0e0a8;
+  --border: #d4a050; --border-strong: #8a4a08;
+  --text: #4a4018; --muted: #8a7848; --accent: #e8770e;
+  --ok: #7a8a2e; --warn: #c98a1c; --overdue: #a04020; --no-data: #8a7848; --done: #b09866;
+  --font-body: var(--font-merriweather, "Merriweather", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 20% 30%, rgba(232, 119, 14, 0.18) 0px, transparent 55%),
+    radial-gradient(at 80% 70%, rgba(212, 160, 80, 0.25) 0px, transparent 55%);
+  --grain-a: rgba(180, 110, 20, 0.014); --grain-b: rgba(180, 110, 20, 0.009); --grain-opacity: 0.4;
+  --surface-tint: rgba(255, 240, 200, 0.4); --surface-tint-hover: rgba(255, 240, 200, 0.7);
+  --modal-backdrop-color: rgba(80, 50, 10, 0.55); --modal-bg-image: none;
+}
+
+/* Cyberpunk — black, hot pink, electric cyan */
+html[data-theme="cyberpunk"] {
+  --bg: #050008; --bg-deep: #000000;
+  --surface: #0e0816; --surface-2: #160a20; --surface-3: #200e2a;
+  --border: #2a1838; --border-strong: #ff2b8a;
+  --text: #f0d8ee; --muted: #a060a8; --accent: #ff2b8a;
+  --ok: #00ffaa; --warn: #ffd60a; --overdue: #ff2050; --no-data: #8060a0; --done: #4a3060;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body-bg-image:
+    radial-gradient(at 20% 20%, rgba(255, 43, 138, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(0, 255, 200, 0.10) 0px, transparent 50%);
+  --grain-a: rgba(255, 43, 138, 0.015); --grain-b: rgba(0, 200, 200, 0.012); --grain-opacity: 0.5;
+  --surface-tint: rgba(255, 255, 255, 0.04); --surface-tint-hover: rgba(255, 43, 138, 0.15);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.85); --modal-bg-image: none;
+}
+
+/* Newsprint — off-white, near-black serif, red accent */
+html[data-theme="newsprint"] {
+  --bg: #f4f1e8; --bg-deep: #e8e2d0;
+  --surface: #ffffff; --surface-2: #f8f4ea; --surface-3: #f0ead8;
+  --border: #c0b8a0; --border-strong: #1a1a1a;
+  --text: #0a0a0a; --muted: #5a5a4a; --accent: #b80a0a;
+  --ok: #2a6020; --warn: #a06010; --overdue: #b80a0a; --no-data: #6a6a5a; --done: #8a8a7a;
+  --body-bg-image: none;
+  --grain-a: rgba(0, 0, 0, 0.012); --grain-b: rgba(0, 0, 0, 0.008); --grain-opacity: 0.35;
+  --surface-tint: rgba(0, 0, 0, 0.04); --surface-tint-hover: rgba(0, 0, 0, 0.08);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.5); --modal-bg-image: none;
+}
+
+/* Forest Mist — sage, mossy, charcoal */
+html[data-theme="mist"] {
+  --bg: #d8e1d2; --bg-deep: #c0cdb8;
+  --surface: #e4ecdc; --surface-2: #d0dcc4; --surface-3: #c0cdb0;
+  --border: #8a9a78; --border-strong: #4a5a38;
+  --text: #1a2818; --muted: #5a7048; --accent: #4a7028;
+  --ok: #4a8a3a; --warn: #b89000; --overdue: #8a3020; --no-data: #6a7a5a; --done: #8a9878;
+  --font-body: var(--font-merriweather, "Merriweather", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 25% 25%, rgba(150, 180, 130, 0.3) 0px, transparent 60%),
+    radial-gradient(at 75% 75%, rgba(100, 140, 90, 0.25) 0px, transparent 60%);
+  --grain-a: rgba(60, 90, 40, 0.014); --grain-b: rgba(60, 90, 40, 0.009); --grain-opacity: 0.4;
+  --surface-tint: rgba(255, 255, 245, 0.4); --surface-tint-hover: rgba(255, 255, 245, 0.7);
+  --modal-backdrop-color: rgba(20, 40, 20, 0.55); --modal-bg-image: none;
+}
+
+/* Slate Blue — gray-blue, ice white, amber */
+html[data-theme="slate"] {
+  --bg: #3a4452; --bg-deep: #2a3340;
+  --surface: #4a5664; --surface-2: #525e6e; --surface-3: #404a58;
+  --border: #5a6878; --border-strong: #d4a040;
+  --text: #f0f4f8; --muted: #a0acba; --accent: #d4a040;
+  --ok: #6abf60; --warn: #d4a040; --overdue: #d04040; --no-data: #8090a0; --done: #607080;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body-bg-image: none;
+  --grain-a: rgba(212, 160, 64, 0.010); --grain-b: rgba(212, 160, 64, 0.006); --grain-opacity: 0.4;
+  --surface-tint: rgba(255, 255, 255, 0.06); --surface-tint-hover: rgba(255, 255, 255, 0.12);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.7); --modal-bg-image: none;
+}
+
+/* Lava — black, crimson, ember, pale yellow */
+html[data-theme="lava"] {
+  --bg: #0d0608; --bg-deep: #050203;
+  --surface: #1c0a0c; --surface-2: #2a0e10; --surface-3: #38121a;
+  --border: #4a1018; --border-strong: #ff5722;
+  --text: #f0e8c0; --muted: #b08080; --accent: #ff5722;
+  --ok: #ffaa20; --warn: #ff8a20; --overdue: #ff2020; --no-data: #8a4040; --done: #4a2020;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body-bg-image:
+    radial-gradient(at 20% 80%, rgba(255, 87, 34, 0.15) 0px, transparent 55%),
+    radial-gradient(at 80% 20%, rgba(140, 20, 20, 0.20) 0px, transparent 55%);
+  --grain-a: rgba(255, 87, 34, 0.015); --grain-b: rgba(255, 87, 34, 0.010); --grain-opacity: 0.45;
+  --surface-tint: rgba(255, 87, 34, 0.06); --surface-tint-hover: rgba(255, 87, 34, 0.12);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.85); --modal-bg-image: none;
+}
+
+/* Glacier — pale ice blue, white, deep blue */
+html[data-theme="glacier"] {
+  --bg: #e8f0f7; --bg-deep: #d4e0ed;
+  --surface: #ffffff; --surface-2: #f4f8fc; --surface-3: #e8f0f7;
+  --border: #a8c0d8; --border-strong: #1a4d8c;
+  --text: #0a1828; --muted: #5070a0; --accent: #1a4d8c;
+  --ok: #2a8a4a; --warn: #c08000; --overdue: #c02020; --no-data: #6080a0; --done: #8090a0;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body-bg-image:
+    radial-gradient(at 30% 30%, rgba(180, 210, 240, 0.4) 0px, transparent 60%),
+    radial-gradient(at 70% 70%, rgba(140, 180, 220, 0.3) 0px, transparent 60%);
+  --grain-a: rgba(20, 60, 120, 0.008); --grain-b: rgba(20, 60, 120, 0.005); --grain-opacity: 0.35;
+  --surface-tint: rgba(0, 0, 0, 0.04); --surface-tint-hover: rgba(0, 0, 0, 0.08);
+  --modal-backdrop-color: rgba(0, 30, 60, 0.5); --modal-bg-image: none;
+}
+
+/* Manuscript — deep forest, gold, parchment */
+html[data-theme="manuscript"] {
+  --bg: #0d2818; --bg-deep: #051408;
+  --surface: #143820; --surface-2: #1a4828; --surface-3: #0a2010;
+  --border: #2a5838; --border-strong: #c9a84c;
+  --text: #f5e8c0; --muted: #8aa888; --accent: #c9a84c;
+  --ok: #6ac060; --warn: #c9a84c; --overdue: #c04040; --no-data: #6a8870; --done: #4a6a4a;
+  --font-body: var(--font-im-fell, "IM Fell English", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 25% 25%, rgba(20, 80, 40, 0.4) 0px, transparent 60%),
+    radial-gradient(at 75% 75%, rgba(10, 40, 20, 0.5) 0px, transparent 60%);
+  --grain-a: rgba(201, 168, 76, 0.018); --grain-b: rgba(201, 168, 76, 0.012); --grain-opacity: 0.55;
+  --surface-tint: rgba(255, 255, 255, 0.05); --surface-tint-hover: rgba(255, 255, 255, 0.10);
+  --modal-backdrop-color: rgba(0, 10, 0, 0.8); --modal-bg-image: none;
+}
+
+/* Bauhaus — white, primary colors, jet black */
+html[data-theme="bauhaus"] {
+  --bg: #fafaf8; --bg-deep: #ececea;
+  --surface: #ffffff; --surface-2: #f0f0ee; --surface-3: #e4e4e2;
+  --border: #1a1a1a; --border-strong: #1a1a1a;
+  --text: #0a0a0a; --muted: #5a5a5a; --accent: #d62020;
+  --ok: #2a8a2a; --warn: #f0c020; --overdue: #d62020; --no-data: #5060c0; --done: #6a6a6a;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body-bg-image: none;
+  --grain-a: rgba(0, 0, 0, 0.008); --grain-b: rgba(0, 0, 0, 0.005); --grain-opacity: 0.25;
+  --surface-tint: rgba(0, 0, 0, 0.04); --surface-tint-hover: rgba(0, 0, 0, 0.08);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.5); --modal-bg-image: none;
+}
+
+/* Twilight — deep purple, plum, lavender, pink */
+html[data-theme="twilight"] {
+  --bg: #1f1535; --bg-deep: #120a1e;
+  --surface: #2a1a48; --surface-2: #322058; --surface-3: #251846;
+  --border: #4a2a78; --border-strong: #e890c0;
+  --text: #e8d8f0; --muted: #a888c0; --accent: #e890c0;
+  --ok: #80c060; --warn: #e8c060; --overdue: #f06080; --no-data: #8868a0; --done: #604878;
+  --font-body: var(--font-merriweather, "Merriweather", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 20% 20%, rgba(120, 60, 180, 0.35) 0px, transparent 55%),
+    radial-gradient(at 80% 80%, rgba(80, 40, 130, 0.45) 0px, transparent 55%);
+  --grain-a: rgba(232, 144, 192, 0.012); --grain-b: rgba(168, 136, 192, 0.010); --grain-opacity: 0.5;
+  --surface-tint: rgba(255, 255, 255, 0.06); --surface-tint-hover: rgba(255, 255, 255, 0.12);
+  --modal-backdrop-color: rgba(15, 5, 30, 0.78); --modal-bg-image: none;
+}
+
+/* Coffee Shop — warm milk, espresso, copper */
+html[data-theme="coffee"] {
+  --bg: #f0e4d0; --bg-deep: #e0d0b8;
+  --surface: #faf0d8; --surface-2: #f4e8ce; --surface-3: #ecdec0;
+  --border: #b08868; --border-strong: #4a2818;
+  --text: #2a1808; --muted: #6a4828; --accent: #b87333;
+  --ok: #6a8a3a; --warn: #b87333; --overdue: #a04020; --no-data: #8a7050; --done: #a08868;
+  --font-body: var(--font-merriweather, "Merriweather", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 25% 25%, rgba(184, 115, 51, 0.18) 0px, transparent 55%),
+    radial-gradient(at 75% 75%, rgba(150, 90, 40, 0.22) 0px, transparent 55%);
+  --grain-a: rgba(120, 80, 40, 0.018); --grain-b: rgba(120, 80, 40, 0.012); --grain-opacity: 0.5;
+  --surface-tint: rgba(255, 240, 220, 0.4); --surface-tint-hover: rgba(255, 240, 220, 0.7);
+  --modal-backdrop-color: rgba(40, 20, 5, 0.6); --modal-bg-image: none;
+}
+
+/* Newspaper Sports — cream, navy headlines, red accent */
+html[data-theme="sports"] {
+  --bg: #f0ead8; --bg-deep: #e0d8c0;
+  --surface: #faf5e0; --surface-2: #f4eed4; --surface-3: #ece2c0;
+  --border: #c0b090; --border-strong: #1a3060;
+  --text: #0a0a18; --muted: #5a5048; --accent: #c01818;
+  --ok: #2a6020; --warn: #c08020; --overdue: #c01818; --no-data: #6a6858; --done: #8a8878;
+  --font-body: var(--font-merriweather, "Merriweather", Georgia, serif);
+  --body-bg-image: none;
+  --grain-a: rgba(0, 0, 0, 0.012); --grain-b: rgba(0, 0, 0, 0.008); --grain-opacity: 0.35;
+  --surface-tint: rgba(0, 0, 0, 0.04); --surface-tint-hover: rgba(0, 0, 0, 0.08);
+  --modal-backdrop-color: rgba(20, 20, 30, 0.55); --modal-bg-image: none;
+}
+
+/* Coral Reef — pale aqua, white, coral, seafoam */
+html[data-theme="coral"] {
+  --bg: #e0f2f1; --bg-deep: #c8e6e3;
+  --surface: #ffffff; --surface-2: #f0fafa; --surface-3: #d8eeed;
+  --border: #80c8c0; --border-strong: #ff6f61;
+  --text: #1a3a3a; --muted: #607878; --accent: #ff6f61;
+  --ok: #20b890; --warn: #f0a020; --overdue: #ff5050; --no-data: #80a8a8; --done: #a0c0c0;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body-bg-image:
+    radial-gradient(at 20% 30%, rgba(160, 230, 220, 0.4) 0px, transparent 60%),
+    radial-gradient(at 80% 70%, rgba(255, 180, 170, 0.25) 0px, transparent 60%);
+  --grain-a: rgba(0, 100, 100, 0.008); --grain-b: rgba(0, 100, 100, 0.005); --grain-opacity: 0.35;
+  --surface-tint: rgba(0, 0, 0, 0.04); --surface-tint-hover: rgba(0, 0, 0, 0.08);
+  --modal-backdrop-color: rgba(20, 50, 50, 0.55); --modal-bg-image: none;
+}
+
+/* Iron — gunmetal, white, brutalist */
+html[data-theme="iron"] {
+  --bg: #2a2d33; --bg-deep: #1a1d22;
+  --surface: #353940; --surface-2: #3e434c; --surface-3: #2e323a;
+  --border: #4a4f58; --border-strong: #e8e8e8;
+  --text: #f0f0f0; --muted: #8a8e96; --accent: #e8e8e8;
+  --ok: #60c060; --warn: #f0c020; --overdue: #f04040; --no-data: #708090; --done: #506070;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body-bg-image: none;
+  --grain-a: rgba(255, 255, 255, 0.012); --grain-b: rgba(255, 255, 255, 0.008); --grain-opacity: 0.3;
+  --surface-tint: rgba(255, 255, 255, 0.06); --surface-tint-hover: rgba(255, 255, 255, 0.12);
+  --modal-backdrop-color: rgba(0, 0, 0, 0.75); --modal-bg-image: none;
+}
+
+/* Sherwood — emerald, hunter, gold, ivory */
+html[data-theme="sherwood"] {
+  --bg: #0d2e22; --bg-deep: #051810;
+  --surface: #144030; --surface-2: #1a503c; --surface-3: #0a2820;
+  --border: #2e6048; --border-strong: #d4a648;
+  --text: #f5ecd0; --muted: #80a890; --accent: #d4a648;
+  --ok: #6abf60; --warn: #d4a648; --overdue: #c04040; --no-data: #6a8878; --done: #4a6858;
+  --font-body: var(--font-im-fell, "IM Fell English", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 25% 25%, rgba(20, 90, 50, 0.4) 0px, transparent 60%),
+    radial-gradient(at 75% 75%, rgba(10, 50, 25, 0.5) 0px, transparent 60%);
+  --grain-a: rgba(212, 166, 72, 0.015); --grain-b: rgba(212, 166, 72, 0.010); --grain-opacity: 0.5;
+  --surface-tint: rgba(255, 255, 255, 0.05); --surface-tint-hover: rgba(255, 255, 255, 0.10);
+  --modal-backdrop-color: rgba(0, 15, 5, 0.78); --modal-bg-image: none;
+}
+
+/* Vintage Maps — sepia tan, dark brown, faded red */
+html[data-theme="vintage"] {
+  --bg: #d8c9a6; --bg-deep: #c8b890;
+  --surface: #e4d6b4; --surface-2: #d8c9a4; --surface-3: #c8ba94;
+  --border: #9a7848; --border-strong: #4a3010;
+  --text: #2e1808; --muted: #7a5830; --accent: #983020;
+  --ok: #5a6a2a; --warn: #b87010; --overdue: #983020; --no-data: #8a7050; --done: #a08860;
+  --font-body: var(--font-im-fell, "IM Fell English", Georgia, serif);
+  --body-bg-image:
+    radial-gradient(at 20% 20%, rgba(180, 140, 80, 0.25) 0px, transparent 55%),
+    radial-gradient(at 80% 80%, rgba(140, 100, 50, 0.30) 0px, transparent 55%);
+  --grain-a: rgba(120, 80, 30, 0.020); --grain-b: rgba(120, 80, 30, 0.014); --grain-opacity: 0.6;
+  --surface-tint: rgba(255, 240, 200, 0.35); --surface-tint-hover: rgba(255, 240, 200, 0.6);
+  --modal-backdrop-color: rgba(50, 30, 10, 0.6); --modal-bg-image: none;
+}
