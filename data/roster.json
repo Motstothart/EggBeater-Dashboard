@@ -81,7 +81,8 @@
           "id": "d-mok7cxmg-ev4dbo",
           "label": "Get a document to Sam to aggregate school-specific info",
           "due": "2026-05-01",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-05-03T20:17:04.653Z"
         }
       ]
     },
