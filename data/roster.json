@@ -131,7 +131,8 @@
           "id": "leila-d4",
           "label": "First drafts of personalized outreach emails (template first)",
           "due": "2026-05-10",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-05-03T20:19:54.865Z"
         },
         {
           "id": "leila-d5",
