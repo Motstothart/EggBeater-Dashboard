@@ -374,6 +374,27 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "carter",
+      "name": "Carter",
+      "track": "9th",
+      "classOf": null,
+      "parents": [
+        {
+          "name": "Irene and John"
+        }
+      ],
+      "mentorName": "Otto",
+      "mentorEmail": "ottostothart@gmail.com",
+      "athleteEmail": "cartekim4511@gmail.com",
+      "parentEmails": [],
+      "calendarKeywords": [
+        "Carter",
+        "Otto"
+      ],
+      "driveFolderUrl": null,
+      "deliverables": []
     }
   ],
   "tracks": [
