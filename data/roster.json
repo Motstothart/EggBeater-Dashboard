@@ -196,7 +196,8 @@
           "id": "soren-d2",
           "label": "Recruiting Reference document",
           "due": "2026-05-03",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-05-06T14:50:56.722Z"
         },
         {
           "id": "soren-d3",
