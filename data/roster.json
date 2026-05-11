@@ -57,7 +57,8 @@
           "id": "sam-d6",
           "label": "Practice phone conversations with mentor",
           "due": "2026-06-14",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-05-11T16:29:56.659Z"
         },
         {
           "id": "sam-d7",
