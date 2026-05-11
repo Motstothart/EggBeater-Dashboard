@@ -138,7 +138,8 @@
           "id": "leila-d5",
           "label": "10-12 finalized outreach emails (1-2 rounds editing)",
           "due": "2026-05-30",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-05-11T16:28:35.790Z"
         },
         {
           "id": "leila-d6",
