@@ -351,7 +351,8 @@
           "id": "d-moiu9p2e-5l5ebo",
           "label": "Review template email ahead of college outreach",
           "due": "2026-05-03",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-05-11T16:28:46.156Z"
         }
       ]
     },
