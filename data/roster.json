@@ -170,7 +170,8 @@
           "id": "d-movmc8q6-jxw67e",
           "label": "Schedule meeting for weekend of 5.9",
           "due": "2026-05-08",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-05-11T16:29:46.777Z"
         }
       ]
     },
