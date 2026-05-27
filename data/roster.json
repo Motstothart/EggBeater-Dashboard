@@ -199,7 +199,8 @@
           "id": "soren-d1",
           "label": "Initial college list (12-15 programs)",
           "due": "2026-05-10",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-05-27T15:55:24.755Z"
         },
         {
           "id": "soren-d2",
