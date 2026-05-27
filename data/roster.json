@@ -360,7 +360,8 @@
           "id": "d-mp1f2qqj-ugt78r",
           "label": "Review Evan's outreach email",
           "due": "2026-05-15",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-05-27T15:55:20.494Z"
         }
       ]
     },
