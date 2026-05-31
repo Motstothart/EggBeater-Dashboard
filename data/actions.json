@@ -4,14 +4,15 @@
       "id": "punch-mpu08pek-tct0ls",
       "text": "Note that we are holding off on 9th graders until finals are done. Look to reschedule in early June.",
       "createdAt": "2026-05-31T16:39:19.964Z"
-    },
-    {
-      "id": "punch-movm9l73-lw72fq",
-      "text": "Get some privates scheduled for this weekend",
-      "createdAt": "2026-05-07T15:03:56.559Z"
     }
   ],
   "completed": [
+    {
+      "id": "punch-movm9l73-lw72fq",
+      "text": "Get some privates scheduled for this weekend",
+      "createdAt": "2026-05-07T15:03:56.559Z",
+      "completedAt": "2026-05-31T16:39:22.849Z"
+    },
     {
       "id": "punch-mok7ibb3-v6lcpg",
       "text": "Spend some time with Evan's email",
