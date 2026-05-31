@@ -219,7 +219,8 @@
           "id": "soren-d4",
           "label": "Refined list (12-15 programs) with detailed research",
           "due": "2026-05-15",
-          "status": "pending"
+          "status": "done",
+          "completedAt": "2026-05-31T16:39:30.310Z"
         },
         {
           "id": "soren-d5",
