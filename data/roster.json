@@ -367,33 +367,6 @@
       ]
     },
     {
-      "id": "sam-g",
-      "name": "Sam G.",
-      "track": "11th-retainer",
-      "classOf": 2028,
-      "parents": [
-        {
-          "name": "Jake and Rochelle"
-        }
-      ],
-      "mentorName": null,
-      "mentorEmail": null,
-      "athleteEmail": null,
-      "parentEmails": [],
-      "calendarKeywords": [
-        "Sam G."
-      ],
-      "driveFolderUrl": null,
-      "deliverables": [
-        {
-          "id": "d-moj2sxbl-7d4z0i",
-          "label": "Follow up with Jake and Rochelle about Sam",
-          "due": "2026-05-10",
-          "status": "pending"
-        }
-      ]
-    },
-    {
       "id": "carter",
       "name": "Carter",
       "track": "9th",
