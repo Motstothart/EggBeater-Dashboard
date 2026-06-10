@@ -21,17 +21,18 @@
       "createdAt": "2026-06-06T22:27:10.676Z"
     },
     {
-      "id": "punch-mpvdvleu-ujk7cr",
-      "text": "Get Sam the list of school research this Friday",
-      "createdAt": "2026-06-01T15:48:49.062Z"
-    },
-    {
       "id": "punch-mpu08pek-tct0ls",
       "text": "Note that we are holding off on 9th graders until finals are done. Look to reschedule in early June.",
       "createdAt": "2026-05-31T16:39:19.964Z"
     }
   ],
   "completed": [
+    {
+      "id": "punch-mpvdvleu-ujk7cr",
+      "text": "Get Sam the list of school research this Friday",
+      "createdAt": "2026-06-01T15:48:49.062Z",
+      "completedAt": "2026-06-10T22:50:23.126Z"
+    },
     {
       "id": "punch-mpvdw0qd-0a6zrz",
       "text": "Soren template email to be wrapped up today 6.1",
